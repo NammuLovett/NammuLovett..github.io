@@ -34,7 +34,9 @@
     - 3.2.3 Comentario    
     - 3.2.4 Sync Changes    
     - 3.2.5 Sincronización de repos    
-    - 3.2.6 Clonar repositorio    
+    - 3.2.6 Clonar repositorio
+  - PASO 4 - GIT BRANCHES
+  - PASO 5 - GITFORK
   
     
 
@@ -133,4 +135,69 @@ Para enviar los archivos desde tu repositorio local al de tu usuario de GitHub d
 ```sh
 git push origin main
 ```
- 
+
+
+# PASO 4 - GIT Branches
+
+[![N|SSH](https://wac-cdn.atlassian.com/dam/jcr:389059a7-214c-46a3-bc52-7781b4730301/hero.svg?cdnVersion=549)
+
+Una rama representa una línea independiente de desarrollo. Las ramas sirven como una abstracción para el proceso de edición/etapa/confirmación. Puede pensar en ellos como una forma de solicitar un directorio de trabajo, un área de preparación y un historial de proyectos completamente nuevos. Las nuevas confirmaciones se registran en el historial de la rama actual, lo que da como resultado una bifurcación en el historial del proyecto.
+
+El comando git branch le permite crear, enumerar, renombrar y eliminar ramas. No le permite cambiar entre ramas o volver a armar un historial bifurcado. Por esta razón, git branch está estrechamente integrado con los comandos git checkout y git merge.
+
+# 4.1 Comandos
+
+## Crear rama
+```sh
+branch <branch>
+```
+Crea una nueva rama llamada ＜rama＞. 
+No verifica la nueva rama.
+
+## Listar ramas
+```sh
+git branch 
+```
+Haz una lista de todas las ramas en tu repositorio. Esto es sinónimo de git branch --list.
+
+## Cambiar nombre de la rama
+```sh
+git branch -m <branch>
+```
+Cambie el nombre de la rama actual a ＜rama＞. 
+
+## Borrar rama
+```sh
+git branch -d <branch>
+```
+Eliminar la rama especificada. Esta es una operación "segura" en la que Git evita que elimine la rama si tiene cambios no fusionados.
+
+## Forzar a borrar una rama
+```sh
+git branch -D <branch>
+```
+Fuerce la eliminación de la rama especificada, incluso si tiene cambios no combinados. Este es el comando que debe usar si desea descartar permanentemente todas las confirmaciones asociadas con una línea de desarrollo en particular.
+
+## Listar ramas remotas
+
+```sh
+git branch -a
+```
+Lista todas las ramas remotas.
+
+## Cambiar de rama
+
+```sh
+git checkout ＜branchname＞
+```
+Conmutación de ramas. Al ejecutar lo siguiente, HEAD apuntará a la rama de ＜branchname＞. Añadiendo -b creas una nueva rama y la selecciona.
+git checkout -b ＜new-branch＞
+git switch tambien cambia la rama y añadiendo -c la crea.
+
+##Fusionar (merge) cambios con Main
+
+```sh
+git merge
+```
+
+# Paso 5 - Git Fork (Bifurcar Proyecto)
