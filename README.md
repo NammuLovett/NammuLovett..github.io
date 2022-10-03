@@ -201,3 +201,106 @@ git merge
 ```
 
 # Paso 5 - Git Fork (Bifurcar Proyecto)
+
+Una bifurcación es una copia de un repositorio. Bifurcar un repositorio te permite experimentar libremente con cambios sin afectar el proyecto original.
+
+Proponer cambios para el proyecto de otra persona
+
+Por ejemplo, puedes utilizar ramificaciones para proponer cambios relacionados con arreglar un error. En lugar de registrar una incidencia para un error que has encontrado, puedes hacer lo siguiente:
+
+   - Bifurque el repositorio.
+   - Solucionar el problema.
+   - Emitir solicitudes de cambios al propietario del proyecto.
+   
+## Bifurcar un repositorio (Hacer un fork)
+
+Puedes ramificar un proyecto para proponer cambios en los repositorios precedentes u originales. En este caso, es una buena práctica sincronizar tu bifurcación periódicamente con el repositorio ascendente. Para hacerlo, deberás usar Git en la línea de comando. 
+
+- Ve al repositorio específico.
+- En la esquina superior derecha de la página, haga clic en Fork (Bifurcar). 
+
+![](https://docs.github.com/assets/cb-23088/images/help/repository/fork_button.png)
+
+- Selecciona un propietario para el repositorio bifurcado
+
+![](https://docs.github.com/assets/cb-151543/images/help/repository/fork-choose-owner.png)
+
+- De forma predeterminada, las bifurcaciones tienen el mismo nombre que sus repositorios primarios. Puedes cambiar el nombre de la bifurcación para distinguirlo aún más. 
+
+![](https://docs.github.com/assets/cb-151542/images/help/repository/fork-choose-repo-name.png)
+
+- Opcionalmente, puedes agregar una descripción de la bifurcación. 
+
+![](https://docs.github.com/assets/cb-177452/images/help/repository/fork-description.png)
+
+- Elige si quieres copiar solo la rama predeterminada, o bien todas las ramas en la nueva bifurcación. En muchos escenarios de bifurcación, como los de contribución a proyectos de código abierto, solo tienes que copiar la rama predeterminada. De forma predeterminada, solo se copia la rama predeterminada. 
+
+![](https://docs.github.com/assets/cb-59189/images/help/repository/copy-default-branch-only.png)
+
+- Haz clic en Crear bifurcación.
+
+![](https://docs.github.com/assets/cb-80721/images/help/repository/fork-create-button.png)
+
+
+
+#Clonar tu repositorio bifurcado
+
+Ahora mismo, tienes una bifurcación del repositorio Spoon-Knife, pero no tienes los archivos de ese repositorio localmente en tu equipo.
+
+ - En GitHub.com, vaya a la bifurcación del repositorio.
+
+ - Encima de la lista de archivos, haga clic en Código. 
+ 
+ ![](https://docs.github.com/assets/cb-20363/images/help/repository/code-button.png)
+ 
+- Copia la dirección URL del repositorio.
+   - Para clonar el repositorio con HTTPS, en «HTTPS» haz clic en
+
+   - Para clonar el repositorio mediante una clave SSH, incluido un certificado emitido por la entidad de certificación SSH de la organización, haga clic en Usar SSH y luego en
+
+   - Para clonar un repositorio mediante GitHub CLI, haz clic en GitHub CLI y, después, haz clic en
+
+ ![](https://docs.github.com/assets/cb-33207/images/help/repository/https-url-clone-cli.png)
+ 
+ 
+ - Abra Terminal. Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio.
+ 
+- Escriba git clone y pegue la dirección URL que ha copiado antes. Tendrá este aspecto, con su nombre de usuario de GitHub en lugar de YOUR-USERNAME:
+
+```sh
+$ git clone https://github.com/YOUR-USERNAME/nombre-fork
+```
+
+- Presione ENTRAR. Se creará tu clonación local.
+```sh
+$ git clone https://github.com/YOUR-USERNAME/nombre-fork
+> Cloning into `nombre-fork`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remote: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+
+```
+
+#Hacer y subir cambios
+Cuando estés listo para enviar tus cambios, pruébalos y confírmalos. git add . indica a Git que quiere incluir todos sus cambios en la siguiente confirmación. git commit toma una instantánea de esos cambios.
+
+```sh
+git add .
+git commit -m "a short description of the change"
+```
+
+Cuando pruebas y confirmas archivos, esencialmente le dices a Git "¡Ok, toma una captura de mis cambios!" Puedes seguir haciendo más cambios y tomando más capturas de las confirmaciones.
+
+Ahora mismo, tus cambios solo existen localmente. Cuando estés listo para subir tus cambios a GitHub, sube tus cambios al remoto.
+
+```sh
+git push
+```
+
+# Paso 6 - Pull Request - Hacer una solicitud de cambios
+
+Para hacerlo, dirígete al repositorio de GitHub en donde vive tu proyecto. En este ejemplo, sería https://www.github.com/<your_username>/nombre-fork. Verá un banner que indica que la rama está una confirmación por delante de octocat:main. Haga clic en Contribute (Contribuir) y,después, en Open a pull request (Abrir una solicitud de incorporación de cambios).
+
+GitHub le dirigirá a una página que muestra las diferencias entre la bifurcación y el repositorio octocat/Spoon-Knife. Haga clic en Create pull request (Crear solicitud de incorporación de cambios).
+
